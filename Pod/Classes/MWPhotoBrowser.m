@@ -168,7 +168,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     _toolbar.barTintColor = nil;
     //[_toolbar setBackgroundImage:nil forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
     //[_toolbar setBackgroundImage:nil forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsLandscapePhone];
-    _toolbar.barStyle = UIBarStyleDefault;
+    _toolbar.barStyle = UIBarStyleBlackTranslucent;
     _toolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
     
     // Toolbar Items

@@ -221,10 +221,17 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
         [_doneButton setTitleTextAttributes:[NSDictionary dictionary] forState:UIControlStateHighlighted];
         //self.navigationItem.rightBarButtonItem = _doneButton;
         if(!_gridController){
-            self.navigationItem.rightBarButtonItem = _doneButton;
+            //self.navigationItem.rightBarButtonItem = _doneButton;
+        }
+        if(self.navigationItem.leftBarButtonItem == nil){
+            self.navigationItem.leftBarButtonItem = self.rootLeftButton;
         }
     } else {
         // We're not first so show back button
+        if(self.navigationItem.leftBarButtonItem != nil){
+            self.rootLeftButton = self.navigationItem.leftBarButtonItem;
+            self.navigationItem.leftBarButtonItem = nil;
+        }
         UIViewController *previousViewController = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2];
         NSString *backButtonTitle = previousViewController.navigationItem.backBarButtonItem ? previousViewController.navigationItem.backBarButtonItem.title : previousViewController.title;
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:backButtonTitle style:UIBarButtonItemStylePlain target:nil action:nil];

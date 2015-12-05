@@ -53,6 +53,7 @@
 @property (nonatomic) NSUInteger delayToHideElements;
 @property (nonatomic, readonly) NSUInteger currentIndex;
 @property (strong, nonatomic) UIToolbar *navToolbar;
+@property (strong,nonatomic) UIBarButtonItem *rootLeftButton;
 
 // Customise image selection icons as they are the only icons with a colour tint
 // Icon should be located in the app's main bundle

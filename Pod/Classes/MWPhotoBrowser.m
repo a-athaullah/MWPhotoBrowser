@@ -228,14 +228,16 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
         }
     } else {
         // We're not first so show back button
-        if(self.navigationItem.leftBarButtonItem != nil){
-            self.rootLeftButton = self.navigationItem.leftBarButtonItem;
-            self.navigationItem.leftBarButtonItem = nil;
-        }
+        
         UIViewController *previousViewController = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2];
         NSString *backButtonTitle = previousViewController.navigationItem.backBarButtonItem ? previousViewController.navigationItem.backBarButtonItem.title : previousViewController.title;
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:backButtonTitle style:UIBarButtonItemStylePlain target:nil action:nil];
         // Appearance
+        if(self.navigationItem.leftBarButtonItem != nil){
+            self.rootLeftButton = self.navigationItem.leftBarButtonItem;
+            NSLog(@"masuk sini bros");
+            self.navigationItem.leftBarButtonItem = _previousButton;
+        }
         [newBackButton setBackButtonBackgroundImage:nil forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
         [newBackButton setBackButtonBackgroundImage:nil forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
         [newBackButton setBackButtonBackgroundImage:nil forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
